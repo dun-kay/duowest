@@ -1,25 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duo West</title>
-    	<style>
-  body {
-    font-family: Courier, monospace;
-    font-size: 14px;
-    padding-top: 15px;
-    padding-bottom: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-</style>
-</head>
-<body>
-    <p><b>Welcome to Duo West.</b></p>
-    <p>Engineering-led timber design, for intentional & thoughtful homes.</p>
-    <p>Located in Fremantle, on Noongar Boodja land.</p>
-    <p></p>
-    <p></p>
-</body>
-</html>
+
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.has("devjw123")) {
+      console.log("Dev mode active");
+      return;
+    }
+
+    if (!window.location.pathname.includes("comingsoon")) {
+      window.location.replace("https://duowest.com/comingsoon");
+    }
+  })();
+</script>
+
+
+
