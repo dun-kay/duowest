@@ -40,6 +40,7 @@ if (heroImage) {
     "assets/images/frame30.png",
     "assets/images/frame31.png",
     "assets/images/frame32.png",
+    "assets/images/frame33.png",
   ];
   let heroFrameIndex = 0;
 
