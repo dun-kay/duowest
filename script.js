@@ -32,28 +32,43 @@ imageFrames.forEach((frame) => {
 });
 
 const heroImage = document.querySelector(".image-frame-hero img");
+const footerImage = document.querySelector(".image-frame-footer img");
+const heroFrames = [
+  "assets/images/frame28.png",
+  "assets/images/frame29.png",
+  "assets/images/frame30.png",
+  "assets/images/frame31.png",
+  "assets/images/frame32.png",
+  "assets/images/frame33.png",
+];
 
-if (heroImage) {
-  const heroFrames = [
-    "assets/images/frame28.png",
-    "assets/images/frame29.png",
-    "assets/images/frame30.png",
-    "assets/images/frame31.png",
-    "assets/images/frame32.png",
-    "assets/images/frame33.png",
-  ];
-  let heroFrameIndex = 0;
-
-  heroFrames.forEach((src) => {
+const preloadFrames = (frames) => {
+  frames.forEach((src) => {
     const preloadImage = new Image();
     preloadImage.src = src;
   });
+};
+
+const rotateImageFrames = (image, frames, startIndex = 0) => {
+  if (!image) {
+    return;
+  }
+
+  let frameIndex = startIndex % frames.length;
+  image.src = frames[frameIndex];
 
   window.setInterval(() => {
-    heroFrameIndex = (heroFrameIndex + 1) % heroFrames.length;
-    heroImage.src = heroFrames[heroFrameIndex];
+    frameIndex = (frameIndex + 1) % frames.length;
+    image.src = frames[frameIndex];
   }, 7500);
+};
+
+if (heroImage || footerImage) {
+  preloadFrames(heroFrames);
 }
+
+rotateImageFrames(heroImage, heroFrames);
+rotateImageFrames(footerImage, heroFrames, Math.floor(heroFrames.length / 2));
 
 const detailImages = document.querySelectorAll(".detail-grid .image-frame img");
 

@@ -341,6 +341,18 @@ p {
   object-position: left center;
 }
 
+.image-frame-footer {
+  width: 100%;
+  max-width: 750px;
+  aspect-ratio: 23 / 13;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.image-frame-footer img {
+  object-position: left center;
+}
+
 .detail-grid {
   display: grid;
   gap: 15px;
@@ -473,10 +485,7 @@ p {
 }
 
 .final-enquiry-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 20px;
-  align-items: end;
+  display: block;
 }
 
 .spacerdiv {
@@ -610,6 +619,7 @@ p {
   }
 
   .image-frame-hero,
+  .image-frame-footer,
   .image-frame-project {
     min-height: 14rem;
   }
